@@ -6,8 +6,28 @@ import './App.css';
 function App() {
   const [count, setCount] = useState(0);
 
+  const envName = import.meta.env.DEV ? '开发环境' : '生产环境';
+  const appTitle = import.meta.env.VITE_APP_TITLE || '未配置';
+  const apiUrl = import.meta.env.VITE_API_URL || '未配置';
+
   return (
     <>
+      <div className="env-info">
+        <h2>环境变量配置展示</h2>
+        <div className="env-item">
+          <span className="env-label">当前环境：</span>
+          <span className="env-value">{envName}</span>
+        </div>
+        <div className="env-item">
+          <span className="env-label">应用标题：</span>
+          <span className="env-value">{appTitle}</span>
+        </div>
+        <div className="env-item">
+          <span className="env-label">API 地址：</span>
+          <span className="env-value">{apiUrl}</span>
+        </div>
+      </div>
+      <hr />
       <div>
         <a href="https://vite.dev" target="_blank" rel="noreferrer">
           <img src={viteLogo} className="logo" alt="Vite logo" />
