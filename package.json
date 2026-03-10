@@ -2,7 +2,7 @@
   "name": "vite-react-project",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "main": "electron/main.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,7 +10,8 @@
     "lint:fix": "eslint . --ext js,jsx --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,css,html,json}\"",
     "format:check": "prettier --check \"src/**/*.{js,jsx,css,html,json}\"",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "electron:dev": "electron ."
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -20,6 +21,8 @@
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react": "^4.2.1",
+    "electron": "^40.8.0",
+    "electron-builder": "^26.8.1",
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
